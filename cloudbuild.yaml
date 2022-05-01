@@ -3,3 +3,6 @@ steps:
     args: ['build', '-t', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word', 'app']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word']
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
+    entrypoint: 'gcloud'
+    args: ['deploy','releases','create','$COMMIT_SHA','--delivery-pipeline=whats-the-word','--region=us-east1']
