@@ -1,0 +1,14 @@
+apiVersion: skaffold/v1beta17
+kind: Config
+metadata:
+  name: cloudbuild-demo-barbacoa
+build:
+  artifacts:
+  - image: us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word
+    context: app
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - app/kubernetes/k8s.yaml
