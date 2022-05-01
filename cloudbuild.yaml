@@ -5,4 +5,4 @@ steps:
     args: ['push', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'gcloud'
-    args: ['deploy','releases','create','commit-$COMMIT_SHA','--delivery-pipeline=whats-the-word','--region=us-east1']
+    args: ['deploy','releases','create','$TAG_NAME','--delivery-pipeline=whats-the-word','--region=us-east1']
