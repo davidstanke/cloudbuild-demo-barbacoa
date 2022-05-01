@@ -4,7 +4,7 @@ metadata:
   name: cloudbuild-demo-barbacoa
 build:
   artifacts:
-  - image: us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word
+  - image: whats-the-word
     context: app
     docker:
       dockerfile: Dockerfile

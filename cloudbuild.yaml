@@ -1,10 +1,18 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word', 'app']
+    args: ['build', '-t', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word:$_SANITIZED_TAG_NAME', 'app']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word']
+    args: ['push', 'us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word:$_SANITIZED_TAG_NAME']
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     entrypoint: 'gcloud'
-    args: ['deploy','releases','create','$_SANITIZED_TAG_NAME','--delivery-pipeline=whats-the-word','--region=us-east1']
+    args: [
+        'deploy',
+        'releases',
+        'create',
+        '$_SANITIZED_TAG_NAME',
+        '--delivery-pipeline=whats-the-word',
+        '--region=us-east1',
+        '--images=whats-the-word=us-east4-docker.pkg.dev/cloudbuild-demo-barbacoa/whats-the-word/whats-the-word:$_SANITIZED_TAG_NAME'
+      ]
 substitutions:
   _SANITIZED_TAG_NAME: "unspecified_tag"
