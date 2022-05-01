@@ -4,6 +4,7 @@ Demo of GCP software delivery tools
 
 
 - Basic flask app; code is in `/app`
+  - deployed app: [What's the Word?](http://prod.barbacoa.doingdevops.com/)
 - K8s manifests in `/app/kubernetes`: (Ingress:Service:Deployment)
 - Cloud deploy config in `delivery-config.yaml`: (Dev --> Stage --> Prod)
 - CD is initiated by Cloud Build in `cloudbuild.yaml`
