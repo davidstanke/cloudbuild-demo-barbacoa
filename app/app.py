@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-app_header = os.getenv('APP_HEADER', "What's the word, mockingbird?")
+app_header = os.getenv('APP_HEADER', "What's the word?")
 
 @app.route('/')
 def home():
