@@ -29,7 +29,7 @@ metadata:
   name: dev
 description: dev cluster
 gke:
-  cluster: projects/cloudbuild-demo-barbacoa/locations/us-east4/clusters/barbacoa-dev
+  cluster: projects/cloudbuild-demo-barbacoa/locations/us-east1-b/clusters/barbacoa-dev-1
 ---
 apiVersion: deploy.cloud.google.com/v1beta1
 kind: Target
