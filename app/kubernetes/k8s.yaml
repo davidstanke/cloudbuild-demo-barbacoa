@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: whats-the-word
+  labels:
+    name: whats-the-word
+---
 apiVersion: v1
 kind: Service
 metadata:
