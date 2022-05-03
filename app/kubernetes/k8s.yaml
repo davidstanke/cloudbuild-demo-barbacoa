@@ -18,6 +18,7 @@ metadata:
   name: whats-the-word
   labels:
     name: whats-the-word
+    istio-injection: enabled
 ---
 apiVersion: v1
 kind: Service
@@ -56,5 +57,9 @@ spec:
       containers:
         - name: whats-the-word
           image: whats-the-word
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 1
+
