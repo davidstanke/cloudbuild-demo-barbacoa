@@ -7,6 +7,7 @@ Demo of GCP software delivery tools
   - deployed app: [What's the Word?](http://prod.barbacoa.doingdevops.com/)
 - K8s manifests in `/app/kubernetes`: (Ingress:Service:Deployment)
 - Cloud deploy config in `delivery-config.yaml`: (Dev --> Stage --> Prod)
+    - `gcloud deploy apply --file=delivery-config.yaml --region=us-east1`
 - CD is initiated by Cloud Build in `cloudbuild.yaml`
   - Trigger config:
     - trigger on tag
