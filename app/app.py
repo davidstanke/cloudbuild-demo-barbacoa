@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, abort
 
 app = Flask(__name__)
 
-app_header = os.getenv('APP_HEADER', "What's the Word?")
+app_header = os.getenv('APP_HEADER', "This is a better version!")
 
 @app.route('/')
 def home():
