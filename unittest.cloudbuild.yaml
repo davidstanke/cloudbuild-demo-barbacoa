@@ -1,6 +1,7 @@
 steps:
 - name: python:3.9-slim
   entrypoint: 'bash'
+  dir: 'app'
   args:
     - '-c'
     - |
