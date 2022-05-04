@@ -20,7 +20,7 @@ def get_definition(word):
     
     # special case the word "error" to demonstrate error logging
     if word == 'error':
-        abort(500,"You entered the word 'error,' so here's an error")
+        abort(400,"You entered the word 'error,' so here's an error")
     
     if not word:
         return '(no word entered)'
